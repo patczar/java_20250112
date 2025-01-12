@@ -14,6 +14,10 @@ public class Osoba {
         this.dataUrodzenia = dataUrodzenia;
     }
 
+    public Osoba(String imie, String nazwisko, String dataUrodzenia) {
+        this(imie, nazwisko, LocalDate.parse(dataUrodzenia));
+    }
+
     public String getImie() {
         return imie;
     }
