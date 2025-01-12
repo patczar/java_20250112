@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class P3_SredniaWszystkich {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         /*
         // W Javie wewnątrz wyrażeń lambda nie wolno modyfikować zmiennych lokalnych zadeklarowanych w bloku zewnętrznym.

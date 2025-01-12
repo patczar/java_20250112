@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class P8_Partycje {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		List<Employee> emps = ObslugaCSV.readCSV();
+		List<Employee> emps = ObslugaCSV.wczytaj();
 		
 		// Podział rekordów na dwie części i zapisanie w słowniku,
 		// w którym kluczem są wartości true/false

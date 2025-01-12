@@ -17,7 +17,7 @@ public class DaneOpcjonalne {
 		System.out.print("Podaj nazwę miasta: ");
 		String miasto = scanner.nextLine();
 		
-		List<Employee> emps = ObslugaCSV.readCSV();
+		List<Employee> emps = ObslugaCSV.wczytaj();
 		
 		OptionalDouble srednia = emps.stream()
 				.filter(emp -> emp.getCity().equals(miasto))

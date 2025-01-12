@@ -5,7 +5,7 @@ import java.util.List;
 
 public class P0_WypiszObiekty {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV("pliki/emps.csv");
+        List<Employee> emps = ObslugaCSV.wczytaj("pliki/emps.csv");
         System.out.println("Odczytano " + emps.size() + " rekordów.");
         for (Employee emp : emps) {
             System.out.println(emp);
@@ -23,5 +23,4 @@ public class P0_WypiszObiekty {
  6 - sortowanie - wypisz pracowników w kolejności rosnących pensji
  7 - wypisz nazwy jobów bez powtórzeń
  8 - (grupowanie) - dla każdego stanowiska (jobTitle) wypisz ilu pracowników pracuje na tym stanowisku i jaka jest ich średnia pensja
-
  */

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class P7_MiastaBezPowtorzen {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		List<Employee> emps = ObslugaCSV.readCSV();
+		List<Employee> emps = ObslugaCSV.wczytaj();
 		// sposób 1: utworzyć zbiór Stringów
 		// ma to sens, gdy potrzebujemy wykorzystać te dane w dalszej części programu
 		Set<String> miasta = emps.stream()

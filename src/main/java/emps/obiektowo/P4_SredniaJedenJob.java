@@ -7,7 +7,7 @@ import java.util.List;
 // 4 - średnia pensja na wybranym stanowisku
 public class P4_SredniaJedenJob {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV("pliki/emps.csv");
+        List<Employee> emps = ObslugaCSV.wczytaj("pliki/emps.csv");
         String szukanyJob = JOptionPane.showInputDialog("Podaj nazwę stanowiska");
 
         double suma = 0;
@@ -27,9 +27,3 @@ public class P4_SredniaJedenJob {
     }
 }
 
-/*
- 5 - wypisz dane pracowników, który zarabia najmniej, i który zarabia najwięcej
- 6 - sortowanie - wypisz pracowników w kolejności rosnących pensji
- 7 - wypisz nazwy jobów bez powtórzeń
- 8 - (grupowanie) - dla każdego stanowiska (jobTitle) wypisz ilu pracownikóœ pracuje na tym stanowisku i jaka jest ich średnia pensja
- */

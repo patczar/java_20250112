@@ -11,7 +11,7 @@ import java.util.Map;
 // - jeśli wartość już jest → aktualizuje zgodnie z podaną funkcją
 public class Grupowanie4 {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         Map<String, Integer> sumy = new HashMap<>();
         Map<String, Integer> ilosci = new HashMap<>();

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class GrupowanieF1 {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         // Dla każdej wartości jobTitle w słowniku zapisana jest lista pracowników, którzy mieli tę wartość.
         Map<String, List<Employee>> grupy = emps.stream().collect(Collectors.groupingBy(Employee::getJobTitle));

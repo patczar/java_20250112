@@ -10,7 +10,7 @@ import java.util.TreeMap;
 public class Grupowanie6 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		final List<Employee> emps = ObslugaCSV.readCSV();
+		final List<Employee> emps = ObslugaCSV.wczytaj();
 		final Map<String, JobInfo> mapa = new TreeMap<>();
 		
 		for (Employee emp : emps) {

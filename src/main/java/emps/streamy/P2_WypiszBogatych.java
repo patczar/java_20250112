@@ -8,7 +8,7 @@ public class P2_WypiszBogatych {
     public static final int GRANICA_ZAROBKOW = 10000;
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
         System.out.println("Wczytano " + emps.size() + " rekordów.");
         System.out.println("Pracownicy zarabiający co najmniej "+GRANICA_ZAROBKOW+":");
 

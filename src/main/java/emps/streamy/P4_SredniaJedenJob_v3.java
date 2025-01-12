@@ -3,12 +3,11 @@ package emps.streamy;
 import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.util.List;
-import java.util.OptionalDouble;
 
 public class P4_SredniaJedenJob_v3 {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         String szukanyJob = JOptionPane.showInputDialog("Podaj nazwę stanowiska");
         // optSrednia.ifPresent(avg -> System.out.println("Średnia = " + avg));

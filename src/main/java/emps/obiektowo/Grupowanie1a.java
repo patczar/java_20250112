@@ -10,7 +10,7 @@ import java.util.Map;
 // W tej wersji używamy wyłącznie podstawowych operacji dostepnych w tej formie od Java 5 (a w formie opartej o typ Object od Java 1.2).
 public class Grupowanie1a {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         // dla każdego joba będziemy tu pamiętać sumę pensji
         Map<String, Integer> sumy = new HashMap<>();

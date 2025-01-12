@@ -1,6 +1,7 @@
 package p01_klasy;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public class Osoba {
@@ -40,6 +41,11 @@ public class Osoba {
 
     public void setDataUrodzenia(LocalDate dataUrodzenia) {
         this.dataUrodzenia = dataUrodzenia;
+    }
+
+    public int getWiek() {
+        Period czasZycia = Period.between(dataUrodzenia, LocalDate.now());
+        return czasZycia.getYears();
     }
 
     @Override

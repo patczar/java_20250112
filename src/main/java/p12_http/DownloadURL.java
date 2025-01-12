@@ -1,4 +1,4 @@
-package p47_http;
+package p12_http;
 
 import java.io.IOException;
 import java.io.InputStream;

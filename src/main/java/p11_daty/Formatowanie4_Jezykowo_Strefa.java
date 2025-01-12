@@ -1,14 +1,14 @@
-package p35_daty;
+package p11_daty;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
 
-public class Formatowanie3_Jezykowo_BezStrefy {
+public class Formatowanie4_Jezykowo_Strefa {
 
 	public static void main(String[] args) {
-		LocalDateTime teraz = LocalDateTime.now();
+		ZonedDateTime teraz = ZonedDateTime.now();
 		
 		Locale[] locales = {
 			new Locale("pl", "PL"),
@@ -26,8 +26,8 @@ public class Formatowanie3_Jezykowo_BezStrefy {
 		};
 		
 		FormatStyle[] styles = {
-			//FormatStyle.FULL,
-			//FormatStyle.LONG,
+			FormatStyle.FULL,
+			FormatStyle.LONG,
 			FormatStyle.MEDIUM,
 			FormatStyle.SHORT
 		};
@@ -35,11 +35,12 @@ public class Formatowanie3_Jezykowo_BezStrefy {
 		for(Locale locale : locales) {
 			System.out.println("\nLOCALE " + locale);
 			for(FormatStyle style : styles) {
-				DateTimeFormatter df = DateTimeFormatter.ofLocalizedDateTime(style);
+				DateTimeFormatter df = DateTimeFormatter
+						.ofLocalizedDateTime(style)
+						.withLocale(locale);
 				System.out.println(teraz.format(df));
+				System.out.println(df.format(teraz));
 			}
-		}
-		
+		}		
 	}
-
 }

@@ -17,7 +17,7 @@ public class P4_SredniaJedenJob_Interaktywna {
             return;
         }
         File selectedFile = fileChooser.getSelectedFile();
-        List<Employee> emps = ObslugaCSV.readCSV(selectedFile);
+        List<Employee> emps = ObslugaCSV.wczytaj(selectedFile);
         Set<String> jobs = new TreeSet<>();
         for(Employee emp : emps) {
             jobs.add(emp.getJobTitle());

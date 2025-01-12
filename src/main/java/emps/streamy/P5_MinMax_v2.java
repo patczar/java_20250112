@@ -7,7 +7,7 @@ import java.util.List;
 public class P5_MinMax_v2 {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
         Comparator<Employee> comparator = Comparator.comparingInt(Employee::getSalary);
 
         emps.stream()

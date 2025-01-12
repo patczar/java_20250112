@@ -8,7 +8,7 @@ import java.util.Map;
 // W tej werji używam dodatkowych operacji Java 8 - putIfAbsent / computeIfPresent (istnieje też ogólna operacja compute)
 public class Grupowanie3 {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         Map<String, Integer> sumy = new HashMap<>();
         Map<String, Integer> ilosci = new HashMap<>();

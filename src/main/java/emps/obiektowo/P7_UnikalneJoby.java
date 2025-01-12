@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class P7_UnikalneJoby {
     public static void main(String[] args) {
         try {
-            List<Employee> emps = ObslugaCSV.readCSV();
+            List<Employee> emps = ObslugaCSV.wczytaj();
             Set<String> jobs = new TreeSet<>();
             for(Employee emp : emps) {
                 jobs.add(emp.getJobTitle());

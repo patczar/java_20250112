@@ -8,7 +8,7 @@ import java.util.Map;
 // W tej werji używam dodatkowej operacji Java 8 - getOrDefault
 public class Grupowanie2 {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         Map<String, Integer> sumy = new HashMap<>();
         Map<String, Integer> ilosci = new HashMap<>();

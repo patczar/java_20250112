@@ -7,7 +7,7 @@ import java.util.List;
 public class P5_MinMax_v1 {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         // Gdyby strumień był pusty i min / max zwracały Optional.empty(), to opracja get skończy się wyjątkiem.
         Employee min = emps.stream().min(Comparator.comparingInt(Employee::getSalary)).get();

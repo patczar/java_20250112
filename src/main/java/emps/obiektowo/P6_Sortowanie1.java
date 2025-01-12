@@ -1,13 +1,12 @@
 package emps.obiektowo;
 
 import java.io.FileNotFoundException;
-import java.util.Comparator;
 import java.util.List;
 
 // 6 - sortowanie - wypisz pracowników w kolejności rosnących pensji
 public class P6_Sortowanie1 {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV("pliki/emps.csv");
+        List<Employee> emps = ObslugaCSV.wczytaj("pliki/emps.csv");
         System.out.println("Odczytano " + emps.size() + " rekordów.");
 
         // to jest poprawne, zakłądając, że pensje nie są ujemne

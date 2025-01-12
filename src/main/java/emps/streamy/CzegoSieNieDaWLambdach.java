@@ -7,7 +7,7 @@ public class CzegoSieNieDaWLambdach {
 	static int sumaStatyczna = 0;
 
 	public static void main(String[] args) throws FileNotFoundException {
-		List<Employee> emps = ObslugaCSV.readCSV();
+		List<Employee> emps = ObslugaCSV.wczytaj();
 
 		// czy damy radę obliczyć sumę pensji za pomocą tego nowego forEach?
 		int sumaLokalna = 0;

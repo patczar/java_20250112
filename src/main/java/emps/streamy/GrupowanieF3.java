@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class GrupowanieF3 {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
 
         Map<String, IntSummaryStatistics> grupy = emps.stream()
                 .collect(Collectors.groupingBy(

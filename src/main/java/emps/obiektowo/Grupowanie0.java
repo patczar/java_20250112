@@ -11,7 +11,7 @@ import java.util.Set;
 // Dla każdego joba od nowa przeglądamy całą listę pracowników. Dla naszych danych daje to (1+19) * 107 operacji.
 public class Grupowanie0 {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
         Set<String> jobs = new HashSet<>();
         for(Employee emp : emps) {
             jobs.add(emp.getJobTitle());

@@ -1,8 +1,8 @@
 package p03_watki;
 
 public class Watki1_Normalnie {
-    // Przy domyślnych ustawieniach wątki działając do końca, nawet jeśli main już się zakończył.
-    // Inaczej mówiąc: wątki utrzymują program (proces) pry życiu.
+    // Przy domyślnych ustawieniach wątki działają do końca, nawet jeśli main już się zakończył.
+    // Inaczej mówiąc: wątki utrzymują program (proces) przy życiu.
 
     public static void main(String[] args) {
         System.out.println("Początek main");

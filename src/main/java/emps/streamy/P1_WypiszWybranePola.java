@@ -6,7 +6,7 @@ import java.util.List;
 public class P1_WypiszWybranePola {
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV();
+        List<Employee> emps = ObslugaCSV.wczytaj();
         System.out.println("Wczytano " + emps.size() + " rekordów.");
 
 //        emps.forEach(emp -> System.out.println(emp.getFirstName()

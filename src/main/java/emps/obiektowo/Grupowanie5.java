@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public class Grupowanie5 {
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		List<Employee> emps = ObslugaCSV.readCSV();
+		List<Employee> emps = ObslugaCSV.wczytaj();
 		Map<String, int[]> slownik = new TreeMap<>();
 
 		for(Employee emp : emps) {

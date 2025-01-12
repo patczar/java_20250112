@@ -6,7 +6,7 @@ import java.util.List;
 
 public class P6_Sortowanie2 {
     public static void main(String[] args) throws FileNotFoundException {
-        List<Employee> emps = ObslugaCSV.readCSV("pliki/emps.csv");
+        List<Employee> emps = ObslugaCSV.wczytaj("pliki/emps.csv");
         System.out.println("Odczytano " + emps.size() + " rekordów.");
 
         // sortowanie malejące wg pensji
