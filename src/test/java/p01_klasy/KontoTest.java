@@ -31,5 +31,21 @@ class KontoTest {
         konto.wyplata(300);
         assertEquals(700, konto.getSaldo());
     }
+
+    @Test
+    void testWplataUjemna() {
+        // sprawdzamy, czy będzie wyjątek
+        assertThrows(IllegalArgumentException.class, () -> konto.wplata(-1100));
+        assertEquals(1000, konto.getSaldo());
+    }
+
+    @Test
+    void testWplataUjemnaPrecyzyjnie() {
+        // sprawdzamy, czy będzie wyjątek
+        // w tej wersji sprawdzamy też szczegóły samego wyjątku
+        IllegalArgumentException exn = assertThrows(IllegalArgumentException.class, () -> konto.wplata(-1100));
+        assertEquals("Niedodatnia kwota wpłaty", exn.getMessage());
+        assertEquals(1000, konto.getSaldo());
+    }
 }
 

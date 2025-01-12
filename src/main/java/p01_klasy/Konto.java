@@ -33,6 +33,9 @@ public class Konto {
     }
 
     public void wplata(int kwota) {
+        if(kwota <= 0) {
+            throw new IllegalArgumentException("Niedodatnia kwota wpłaty");
+        }
         saldo += kwota;
     }
 
