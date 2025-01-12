@@ -34,23 +34,32 @@ public class Konto {
         this.wlasciciel = wlasciciel;
     }
 
-    public int getSaldo() {
+    public synchronized int getSaldo() {
         return saldo;
     }
 
+    // Gdy jeden wątek wykonuje metodę lubblok synchronizowany na obiekcie X,
+    // to żaden inny wątek nie może wejść do metody lub sekcji synchronizowanej
+    // NA TYM SAMYM OBIEKCIE. Taki wątek czeka, aż wykonujący wyjdzie z kodu synchronizowanego.
     public synchronized void wplata(int kwota) {
         if(kwota <= 0) {
             throw new IllegalArgumentException("Kwota wpłaty nie jest dodatnia");
         }
         saldo += kwota;
         notify();
+
+        // System.out.println("I jeszcze coś robię");
+        // saldo --; // potrącić prowizję
+
+        // wątek obudzony z notify musi jeszcze poczekać, aż ja skończę tu robotę
+        // bo to jeszcze ja zajmuję sekcje "synchorized"
     }
 
     public synchronized void wyplata(int kwota) throws BrakSrodkow {
-        if (kwota <= 0) {
+        if(kwota <= 0) {
             throw new IllegalArgumentException("Kwota wypłaty nie jest dodatnia");
         }
-        if (kwota > saldo) {
+        if(kwota > saldo) {
             throw new BrakSrodkow("Za mało środków na koncie nr " + numer);
         }
         saldo -= kwota;
@@ -63,12 +72,24 @@ public class Konto {
         try {
             while(kwota > saldo) {
                 wait();
+                // po obudzeniu (notify) ten wątek na normalnych prawach
+                // czeka na dostęp do sekcji synchronizowanej
+                // 1) wątek, który zrobił notify, musi wyjść
+                // 2) może pojawić się trzeci wątek, który "wepchnie się" do metody synchronizowanej,
+                // zanim zrobi to TEN wątek obudzony z wait-a
+                // Również z tego powodu warunek oczekiwania należy sprawdzić ponownie po obudzeniu
+                // Standardowy zapis - pętla while.
             }
             saldo -= kwota;
-            notify(); // budzenie kaskadowe
+            notify();
         } catch (InterruptedException e) {
-            // w przypadku przerwania operacji nie wykonujemy już wypłaty
-            throw new RuntimeException(e);
+            // Taki wyjątek pojawi się gdy podczas gdy wątek A śpi (w wait, sleep itp.)
+            // inny wątek B wywoła na wątku A metodę interrupt
+            // Zazwyczaj robi się to, gdy kończy się program albo anuluje wątki, które nie będą potrzebne.
+
+            // interrupt nie jest normalnym zakończeniem oczekiwania. Warunek logiczny nie został spełniony
+            // - w takiej sytuacji nie powinniśmy podejmować akcji zmieniających stan,
+            // ani nie powinnismy kontynuować czekania.
         }
     }
 
