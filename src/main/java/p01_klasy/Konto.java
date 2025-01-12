@@ -32,4 +32,11 @@ public class Konto {
         return saldo;
     }
 
+    public void wplata(int kwota) {
+        saldo += kwota;
+    }
+
+    public void wyplata(int kwota) {
+        saldo -= kwota;
+    }
 }

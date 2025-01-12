@@ -20,5 +20,16 @@ class KontoTest {
         assertEquals(1000, konto.getSaldo());
     }
 
+    @Test
+    void testWplata() {
+        konto.wplata(400);
+        assertEquals(1400, konto.getSaldo());
+    }
 
+    @Test
+    void testWyplata() {
+        konto.wyplata(300);
+        assertEquals(700, konto.getSaldo());
+    }
 }
+
