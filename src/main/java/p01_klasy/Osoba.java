@@ -1,6 +1,7 @@
 package p01_klasy;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Osoba {
     private String imie;
@@ -37,4 +38,24 @@ public class Osoba {
         this.dataUrodzenia = dataUrodzenia;
     }
 
+    @Override
+    public String toString() {
+        return "Osoba{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", dataUrodzenia=" + dataUrodzenia +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Osoba osoba = (Osoba) o;
+        return Objects.equals(imie, osoba.imie) && Objects.equals(nazwisko, osoba.nazwisko) && Objects.equals(dataUrodzenia, osoba.dataUrodzenia);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(imie, nazwisko, dataUrodzenia);
+    }
 }
