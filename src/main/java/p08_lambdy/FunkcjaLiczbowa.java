@@ -19,10 +19,12 @@ public interface FunkcjaLiczbowa {
         return (int)oblicz(arg);
     }
 
+    // Zwraca w wyniku funkcję.
     static FunkcjaLiczbowa identycznosc() {
         return x -> x;
     }
 
+    // Ta metoda sama jest funkcją identycznościową.
     static double nicniezmieniaj(double x) {
         return x;
     }

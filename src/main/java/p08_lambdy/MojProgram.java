@@ -10,6 +10,7 @@ public class MojProgram {
         MojFrameworkFunkcyjny.zastosujDoTablicy(a, x -> 2*x);
         System.out.println(Arrays.toString(a));
         MojFrameworkFunkcyjny.zastosujDoTablicy(a, Math::sqrt);
+        // MojFrameworkFunkcyjny.zastosujDoTablicy(a, arg -> Math.sqrt(arg));
         System.out.println(Arrays.toString(a));
         MojFrameworkFunkcyjny.zastosujDoTablicy(a, x -> x*x);
         System.out.println(Arrays.toString(a));
