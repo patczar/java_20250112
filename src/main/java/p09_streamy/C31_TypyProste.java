@@ -12,6 +12,9 @@ public class C31_TypyProste {
 
 	public static void main(String[] args) {
 		// Istnieją trzy typy strumieni dla typów prostych: IntStream, LongStream, DoubleStream
+		// Motywacje:
+		// 1) większa wydajność niż "wrapperów"
+		// 2) dodatkowe operacje, jak sum() i average(), summaryStatistics()
 		DoubleStream losowe = DoubleStream.generate(Math::random);
 		
 		losowe.limit(100).forEach(x -> System.out.print(x + ", "));

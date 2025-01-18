@@ -43,7 +43,7 @@ public class Collect_i_Reduce {
 		{
 			String wynik = Stream.of(imiona).collect(
 				String::new,
-				String::concat, // concat nie zmienia Strina, na którym jest wołany - więc nie będzie efektu
+				String::concat, // concat nie zmienia Stringa, na którym jest wołany - więc nie będzie efektu
 				String::concat);
 		
 			System.out.println("3: " + wynik);
@@ -57,14 +57,14 @@ public class Collect_i_Reduce {
 			System.out.println("4: " + wynik);
 		}
 		
-		// to tłumaczy się na taką pętlę:
+		// to tłumaczy się na taką pętlę:
 		{
 			String wynik = "";
 			for (String s : imiona) {
 				wynik = wynik.concat(s); // przypisanie / podmiana wyniku !!!
 			}
 			System.out.println("5: " + wynik);
-		}	
+		}
 
 		// Gdyby "combiner" częściowych wyników różnił się od "accumulatora" pojedynczych wartości,
 		// podajemy go jako trzeci parametr
@@ -86,7 +86,7 @@ public class Collect_i_Reduce {
 					(suma, str) -> suma + str.length(),
 					Math::addExact);
 			System.out.println("7: " + wynik);
-		}	
+		}
 
 		// te ostatnie funkcje ("combiner") są używane tylko gdy parallelStream
 	}

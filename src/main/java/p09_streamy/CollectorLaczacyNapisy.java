@@ -37,7 +37,11 @@ public class CollectorLaczacyNapisy	implements Collector<String, StringBuilder, 
 	}
 
 	@Override
+//	public Set<Characteristics> characteristics() {
+//		return Collections.emptySet();
+//	}
+	// wydje mi się, że mogłoby być CONCURRENT i wszystko byłoby OK
 	public Set<Characteristics> characteristics() {
-		return Collections.emptySet();				
+		return Set.of(Characteristics.CONCURRENT);
 	}
 }
