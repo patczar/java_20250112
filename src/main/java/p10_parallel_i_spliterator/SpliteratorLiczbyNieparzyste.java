@@ -24,13 +24,9 @@ public class SpliteratorLiczbyNieparzyste implements Spliterator<Integer> {
 		return 1 + 2 * min++;
 	}
 
-	private boolean hasNext() {
-		return min < max;
-	}
-
 	@Override
 	public boolean tryAdvance(Consumer<? super Integer> action) {
-		if(hasNext()) {
+		if(min < max) {
 			action.accept(this.next());
 			return true;
 		} else {

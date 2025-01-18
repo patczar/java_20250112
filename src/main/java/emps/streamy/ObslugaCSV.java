@@ -38,6 +38,8 @@ public class ObslugaCSV {
         return emps;
     }
 
+    // Ta wersja dostarcza strumienia obiektów Employee, ale dane z pliku są czytane na bieżąco dopiero, gdy są potrzebne.
+    // Nie ma ładowania wszystkich danych na raz do pamięci.
     public static Stream<Employee> wczytajStrumieniowo(Path plik) {
         try {
             return Files.lines(plik)

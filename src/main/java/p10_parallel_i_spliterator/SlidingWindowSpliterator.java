@@ -2,6 +2,8 @@ package p10_parallel_i_spliterator;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class SlidingWindowSpliterator<T> implements Spliterator<List<T>> {
     private final List<T> list;

@@ -19,7 +19,8 @@ public class ArrayListSplit {
 		lista.add("hhh");
 		lista.add("iii");
 		lista.add("jjj");
-		
+		lista.add("kkk");
+
 		System.out.println(lista);
 		
 		Consumer<String> akcja = s -> System.out.println("* " + s);
@@ -40,10 +41,10 @@ public class ArrayListSplit {
 		
 		Spliterator<String> spliterator3a = spliterator3.trySplit();
 		
-		System.out.println("Oryginalny:");
+		System.out.println("Oryginalny: " + spliterator3.estimateSize());
 		spliterator3.forEachRemaining(akcja);
 
-		System.out.println("wynik pierwszego split:");
+		System.out.println("wynik pierwszego split: " + spliterator3a.estimateSize());
 		spliterator3a.forEachRemaining(akcja);
 
 		System.out.println();

@@ -27,9 +27,9 @@ public class P4_SredniaJedenJob_v2 {
         // getAsDouble - to by wyrzuciło wyjątek w razie braku danych
         // aby sprawdzić, czy wartość istnieje, można użyć isPresent / isEmpty
         if(opt.isPresent()) {
-            System.out.printf("Pracownicy typu %s mają średnią pensję %.2f", szukanyJob, opt.getAsDouble());
+            System.out.printf("Pracownicy typu %s mają średnią pensję %.2f%n", szukanyJob, opt.getAsDouble());
         } else {
-            System.out.printf("Nikt nie pracuje na stanowisku %s", szukanyJob);
+            System.out.printf("Nikt nie pracuje na stanowisku %s%n", szukanyJob);
         }
 
         // inne operacje
