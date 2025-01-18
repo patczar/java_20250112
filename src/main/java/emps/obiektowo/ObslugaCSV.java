@@ -36,11 +36,11 @@ public class ObslugaCSV {
         return wczytaj("pliki/emps.csv");
     }
 
-    public static void zapisz(List<emps.streamy.Employee> lista, File plik) {
+    public static void zapisz(List<Employee> lista, File plik) {
         try(PrintWriter out = new PrintWriter(plik)) {
             out.println(
                     "employee_id;first_name;last_name;job_title;salary;hire_date;department_name;address;postal_code;city;country");
-            for (emps.streamy.Employee emp : lista) {
+            for (Employee emp : lista) {
                 out.printf("%d;%s;%s;%s;%d;%s;%s;%s;%s;%s;%s\n", emp.getEmployeeId(), emp.getFirstName(),
                         emp.getLastName(), emp.getJobTitle(), emp.getSalary(), emp.getHireDate(),
                         emp.getDepartmentName(), emp.getAddress(), emp.getPostalCode(), emp.getCity(),
@@ -51,11 +51,11 @@ public class ObslugaCSV {
         }
     }
 
-    public static void zapisz(List<emps.streamy.Employee> lista, String sciezka) {
+    public static void zapisz(List<Employee> lista, String sciezka) {
         zapisz(lista, new File(sciezka));
     }
 
-    public static void zapisz(List<emps.streamy.Employee> lista) {
+    public static void zapisz(List<Employee> lista) {
         zapisz(lista, "pliki/emps.csv");
     }
 }
