@@ -36,11 +36,20 @@ public class C13_RozneOperacje {
 		// inna wersja: podajemy funkcję tworzącą tablice; korzyść: dostajemy String[] a nie Object[]
 		String[] array2 = Stream.of(imiona)
 			.sorted()
-			.toArray(String[]::new);
+			.toArray(String[]::new);   // .toArray(size -> new String[size])
 		System.out.println(array2 + " , length="+array2.length);
 		System.out.println(Arrays.toString(array2));
 		System.out.println("\n--------------------------------\n");
-		
+
+		// od Java 16 jest też dostępne toList()
+		// w starszych wersjach robiło się to przez collect(Collectors.toList())
+		List<String> listaWynikowa = Stream.of(imiona)
+				.map(String::toUpperCase)
+				.sorted()
+				.toList();
+		System.out.println(listaWynikowa);
+		System.out.println();
+
 		// reduce - redukcja w sposób właściwy dla klas niemutowalnych
 		Optional<String> wynik01 = Stream.of(imiona)
 			.reduce(String::concat);
@@ -108,7 +117,6 @@ public class C13_RozneOperacje {
 
 		boolean bool4 = Stream.of(imiona).noneMatch(s -> s.startsWith("K"));
 		System.out.println("bool4 = " + bool4);
-
 	}
 
 }

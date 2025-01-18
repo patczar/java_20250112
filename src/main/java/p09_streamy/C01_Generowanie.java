@@ -28,9 +28,8 @@ public class C01_Generowanie {
 		System.out.println();
 		System.out.println();
 		
-		// Kolejny element strumienia generowany "bezkontekstowo" (bez żanego parametru)
-
-		Stream<LocalTime> czasy = Stream.generate(() -> LocalTime.now()); 
+		// Kolejny element strumienia generowany "bezkontekstowo" (bez żadnego parametru)
+		Stream<LocalTime> czasy = Stream.generate(() -> LocalTime.now());
 		// to się zapętla:
 		// czasy.forEach(lt -> System.out.println(lt));
 		
@@ -42,7 +41,7 @@ public class C01_Generowanie {
 		System.out.println();
 		
 		int licznikLokalny = 0;
-		// w wyrażeniu lambda nie wolno modyfikować zmiennych lokalnych ani używać zmieniających się zmiennych lokalnych
+		// w wyrażeniu lambda nie wolno modyfikować zmiennych lokalnych ani używać zmieniających się zmiennych lokalnych
 		// int suma0 = IntStream.generate(() -> ++licznikLokalny).limit(10).sum();
 		
 		int suma = IntStream.generate(() -> ++licznikStatyczny)
@@ -50,10 +49,9 @@ public class C01_Generowanie {
 			.limit(8)
 			.sum();
 		System.out.println(suma);
-
+		System.out.println();
 
 		// Kolejny element generowany na podstawie poprzedniego
-
 		Stream<String> str4 = Stream.iterate("$", s -> s + "*");
 		// też nieskończony
 		str4.limit(10).forEach(System.out::println);
@@ -73,7 +71,8 @@ public class C01_Generowanie {
 		
 		LongStream.iterate(1, x -> 2*x).limit(65).forEach(System.out::println);
 		System.out.println();
-		
+
+		// konkatenacja strumieni - powstaje strumień, który najpierw bierze wszystko z pierwszego, a gdy się skończy, to z drugiego
 		Stream<String> str11 = Stream.of("Ala", "Ola", "Ela");
 		Stream<String> str12 = Stream.of("Adam", "Ludwik", "Ksawery");
 		Stream<String> razem = Stream.concat(str11, str12);

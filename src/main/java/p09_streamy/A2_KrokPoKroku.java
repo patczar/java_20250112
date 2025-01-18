@@ -20,7 +20,13 @@ public class A2_KrokPoKroku {
         System.out.println(list);
         System.out.println();
 
-        // W tym przykładzie wynik każdej kolejnej operacji na strumieniu zapisuję w pomocniczych zmiennych.
+        // Zasadniczo chcemy uruchomić taki pipeline:
+//        list.stream()
+//                .filter(A2_KrokPoKroku::sprawdz)
+//                .map(A2_KrokPoKroku::mapuj)
+//                .forEach(System.out::println);
+
+        // Ale w tym przykładzie wynik każdej kolejnej operacji na strumieniu zapisujemy w pomocniczych zmiennych.
         Stream<String> stream1 = list.stream();
         System.out.println("stream1: " + stream1);
         Stream<String> stream2 = stream1.filter(A2_KrokPoKroku::sprawdz);

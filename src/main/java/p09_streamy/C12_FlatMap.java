@@ -51,18 +51,14 @@ public class C12_FlatMap {
 		System.out.println();
 		
 		Stream.of(1, 3, 5)
-			.map(x -> C12_FlatMap.generuj(x).stream())
+			.map(C12_FlatMap::generujStrumien)
 			.forEach(x -> System.out.print(x + " | "));
 		System.out.println();
 		System.out.println();
 
 		System.out.println("Płaskie mapowanie:");
-		Stream.of(1, 3, 5)
-			.flatMap(x -> C12_FlatMap.generuj(x).stream())
-			.forEach(x -> System.out.print(x + " | "));
-		System.out.println();
-		System.out.println();
-
+		// flatMap używa funkcji, która zwraca w wyniku strumień i łączy wynikowe strumienie w jeden strumień
+		// forEach przegląda już elementy wynikowe, czyli liczby z połączonych strumieni
 		Stream.of(1, 3, 5)
 			.flatMap(C12_FlatMap::generujStrumien)
 			.forEach(x -> System.out.print(x + " | "));
