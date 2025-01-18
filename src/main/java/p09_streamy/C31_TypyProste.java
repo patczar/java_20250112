@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 public class C31_TypyProste {
 
 	public static void main(String[] args) {
+		// Istnieją trzy typy strumieni dla typów prostych: IntStream, LongStream, DoubleStream
 		DoubleStream losowe = DoubleStream.generate(Math::random);
 		
 		losowe.limit(100).forEach(x -> System.out.print(x + ", "));
