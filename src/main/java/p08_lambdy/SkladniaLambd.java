@@ -27,7 +27,7 @@ public class SkladniaLambd {
 		// pomijam typ argumentu
 		FunkcjaLiczbowa f2 = (arg) -> {return arg + 5;};
 		
-		//FunkcjaLiczbowa f2 = (arg) -> return arg + 5;
+		//NK FunkcjaLiczbowa f2 = (arg) -> return arg + 5;
 		
 		// jeśli prawa strona sprowadza się do jednego return, można od razu pisać wynim bez klamerek i bez return:
 		FunkcjaLiczbowa f3 = (arg) -> arg + 5;
